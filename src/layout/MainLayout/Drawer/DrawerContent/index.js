@@ -1,22 +1,30 @@
-// project import
-import NavCard from './NavCard';
-import Navigation from './Navigation';
-import SimpleBar from 'components/third-party/SimpleBar';
+import React from 'react';
+import { Accordion, AccordionSummary, AccordionDetails, List, ListItem, Typography } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Link } from 'react-router-dom';
+import { sidebarItems } from './sidebarConfig';
 
-// ==============================|| DRAWER CONTENT ||============================== //
+const Drawer = () => {
+  return (
+    <div style={{  height: '100%', overflow: 'auto' }}>
+      { sidebarItems.map((section, idx) => (
+        <Accordion key={idx}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography>{section.title}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <List>
+              {section.items.map((item, idx) => (
+                <ListItem button key={idx} component={Link} to={`/${section.title}-${item}`}>
+                  {item}
+                </ListItem>
+              ))}
+            </List>
+          </AccordionDetails>
+        </Accordion>
+      ))}
+    </div>
+  );
+};
 
-const DrawerContent = () => (
-  <SimpleBar
-    sx={{
-      '& .simplebar-content': {
-        display: 'flex',
-        flexDirection: 'column'
-      }
-    }}
-  >
-    <Navigation />
-    <NavCard />
-  </SimpleBar>
-);
-
-export default DrawerContent;
+export default Drawer;

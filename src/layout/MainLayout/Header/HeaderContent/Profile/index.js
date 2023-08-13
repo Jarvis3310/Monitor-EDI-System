@@ -79,16 +79,16 @@ const Profile = () => {
     setValue(newValue);
   };
 
-  const iconBackColorOpen = 'grey.300';
+  // const iconBackColorOpen = 'grey.300';
 
   return (
-    <Box sx={{ flexShrink: 0, ml: 0.75 }}>
+    <Box sx={{ flexShrink: 0, ml: 0.75}}>
       <ButtonBase
         sx={{
-          p: 0.25,
-          bgcolor: open ? iconBackColorOpen : 'transparent',
-          borderRadius: 1,
-          '&:hover': { bgcolor: 'secondary.lighter' }
+          // p: 0.25,
+          // bgcolor: open ? iconBackColorOpen : 'transparent',
+          // borderRadius: 1
+          // '&:hover': { bgcolor: 'secondary.lighter' }
         }}
         aria-label="open profile"
         ref={anchorRef}
@@ -96,9 +96,9 @@ const Profile = () => {
         aria-haspopup="true"
         onClick={handleToggle}
       >
-        <Stack direction="row" spacing={2} alignItems="center" sx={{ p: 0.5 }}>
-          <Avatar alt="profile user" src={avatar1} sx={{ width: 32, height: 32 }} />
-          <Typography variant="subtitle1">John Doe</Typography>
+        <Stack direction="row" spacing={1.5} alignItems="center" sx={{ p: 0.5 }}>
+          <Avatar alt="profile user" src={avatar1} sx={{ width: 42, height: 42 }} />
+          <Typography variant="subtitle1" sx={{color:'white',fontSize: 20}}>Jarvis</Typography>
         </Stack>
       </ButtonBase>
       <Popper
@@ -141,9 +141,9 @@ const Profile = () => {
                           <Stack direction="row" spacing={1.25} alignItems="center">
                             <Avatar alt="profile user" src={avatar1} sx={{ width: 32, height: 32 }} />
                             <Stack>
-                              <Typography variant="h6">John Doe</Typography>
+                              <Typography variant="h6">Jarvis</Typography>
                               <Typography variant="body2" color="textSecondary">
-                                UI/UX Designer
+                                Engineer
                               </Typography>
                             </Stack>
                           </Stack>
@@ -155,7 +155,7 @@ const Profile = () => {
                         </Grid>
                       </Grid>
                     </CardContent>
-                    {open && (
+                    {false && (
                       <>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                           <Tabs variant="fullWidth" value={value} onChange={handleChange} aria-label="profile tabs">

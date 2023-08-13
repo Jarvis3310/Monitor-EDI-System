@@ -14,7 +14,7 @@ const SamplePage = Loadable(lazy(() => import('pages/extra-pages/SamplePage')));
 const Typography = Loadable(lazy(() => import('pages/components-overview/Typography')));
 const Color = Loadable(lazy(() => import('pages/components-overview/Color')));
 const Shadow = Loadable(lazy(() => import('pages/components-overview/Shadow')));
-const AntIcons = Loadable(lazy(() => import('pages/components-overview/AntIcons')));
+// const AntIcons = Loadable(lazy(() => import('pages/components-overview/AntIcons')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -27,8 +27,8 @@ const MainRoutes = {
       element: <DashboardDefault />
     },
     {
-      path: 'color',
-      element: <Color />
+      path: 'KH-SIT',
+      element: <DashboardDefault />
     },
     {
       path: 'dashboard',
@@ -40,11 +40,11 @@ const MainRoutes = {
       ]
     },
     {
-      path: 'sample-page',
+      path: 'KH-UAT',
       element: <SamplePage />
     },
     {
-      path: 'shadow',
+      path: 'MA-SIT',
       element: <Shadow />
     },
     {
@@ -52,8 +52,8 @@ const MainRoutes = {
       element: <Typography />
     },
     {
-      path: 'icons/ant',
-      element: <AntIcons />
+      path: 'MA-UAT',
+      element: <Color />
     }
   ]
 };

@@ -16,14 +16,14 @@ const DrawerHeader = ({ open }) => {
   return (
     // only available in paid version
     <DrawerHeaderStyled theme={theme} open={open}>
-      <Stack direction="row" spacing={1} alignItems="center">
+      <Stack direction="row" spacing={1} alignItems="center" >
         <Logo />
         <Chip
           label={process.env.REACT_APP_VERSION}
           size="small"
-          sx={{ height: 16, '& .MuiChip-label': { fontSize: '0.625rem', py: 0.25 } }}
+          sx={{ height: 18, '& .MuiChip-label': { fontSize: '0.8rem', py: 0.3,color:'white' } }}
           component="a"
-          href="https://github.com/codedthemes/mantis-free-react-admin-template"
+          href="https://en.wikipedia.org/wiki/AN/TWQ-1_Avenger"
           target="_blank"
           clickable
         />
