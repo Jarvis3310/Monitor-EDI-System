@@ -24,18 +24,22 @@ const MainRoutes = {
   children: [
     {
       path: '/',
-      element: <DashboardDefault />
+      element: <DashboardDefault isJob={false}/>
     },
     {
       path: 'KH-SIT',
-      element: <DashboardDefault />
+      element: <DashboardDefault isJob={false}/>
+    },
+    {
+      path: 'KH-SIT-JOB',
+      element: <DashboardDefault isJob={true}/>
     },
     {
       path: 'dashboard',
       children: [
         {
           path: 'default',
-          element: <DashboardDefault />
+          element: <DashboardDefault isJob={false}/>
         }
       ]
     },
